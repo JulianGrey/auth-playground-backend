@@ -111,10 +111,6 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.get('/home', authenticateToken, (req, res) => {
-  res.json({ user: req.user });
-});
-
 app.post('/logout', (req, res) => {
   res.clearCookie('token', {
     httpOnly: true,
