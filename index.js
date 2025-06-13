@@ -120,6 +120,10 @@ app.post('/logout', (req, res) => {
   res.json({ message: 'Logged out successfully' });
 });
 
+app.get('/user', authenticateToken, (req, res) => {
+  res.json({ user: req.user });
+});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
